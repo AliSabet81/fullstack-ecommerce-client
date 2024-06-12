@@ -8,6 +8,7 @@ import { FC } from "react";
 import Filter from "./components/filter";
 import NoResults from "@/components/ui/noResults";
 import ProductCard from "@/components/ui/productCard";
+import MobileFilters from "./components/mobileFilters";
 
 interface CategoryPageProps {
   params: {
@@ -38,6 +39,7 @@ const CategoryPage: FC<CategoryPageProps> = async ({
         <Billboard data={catgeory.billboard} />
         <div className="px-4 sm:px-6 lg:px-8 pb-24">
           <div className="lg:grid lg:grid-cols-5 lg:gap-x-8">
+            <MobileFilters colors={colors} sizes={sizes} />
             <div className="hidden lg:block">
               <Filter valueKey="sizeId" name="Sizes" data={sizes} />
               <Filter valueKey="colorId" name="Colors" data={colors} />
