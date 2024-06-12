@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { FC } from "react";
 import IconButton from "./iconButton";
 import { Expand, ShoppingCart } from "lucide-react";
+import Currency from "./currency";
 
 interface ProductCardProps {
   data: Product;
