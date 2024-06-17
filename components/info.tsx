@@ -1,7 +1,7 @@
 "use client";
 
 import { Product } from "@/types";
-import React, { FC, MouseEventHandler } from "react";
+import React, { FC } from "react";
 import Currency from "./ui/currency";
 import Button from "./ui/button";
 import { ShoppingCart } from "lucide-react";
