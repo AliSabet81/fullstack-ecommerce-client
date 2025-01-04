@@ -20,6 +20,11 @@ const NavbarActions = () => {
     return null;
   }
 
+  const totalQuantity = cart.items.reduce(
+    (total, item) => total + (item.quantity || 1),
+    0
+  );
+
   return (
     <div className="ml-auto flex items-center gap-x-4">
       <Button
@@ -28,7 +33,7 @@ const NavbarActions = () => {
       >
         <ShoppingBag size={20} color="white" />
         <span className="ml-2 text-sm font-medium text-white">
-          {cart.items.length}
+          {totalQuantity}
         </span>
       </Button>
     </div>

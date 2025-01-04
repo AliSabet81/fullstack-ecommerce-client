@@ -4,7 +4,7 @@ import Currency from "@/components/ui/currency";
 import IconButton from "@/components/ui/iconButton";
 import useCart from "@/hooks/useCart";
 import { Product } from "@/types";
-import { X } from "lucide-react";
+import { Minus, Plus, X } from "lucide-react";
 import Image from "next/image";
 import { FC } from "react";
 
@@ -17,6 +17,12 @@ const CartItem: FC<CartItemProps> = ({ data }) => {
 
   const onRemove = () => {
     cart.removeItem(data.id);
+  };
+  const onIncrease = () => {
+    cart.addItem(data);
+  };
+  const onDecrease = () => {
+    cart.decrementItem(data.id);
   };
 
   return (
@@ -44,6 +50,11 @@ const CartItem: FC<CartItemProps> = ({ data }) => {
             </p>
           </div>
           <Currency value={data.price} />
+          <div className="flex items-center gap-4 my-2">
+            <IconButton icon={<Minus size={15} />} onClick={onDecrease} />
+            <span>{data.quantity}</span>
+            <IconButton icon={<Plus size={15} />} onClick={onIncrease} />
+          </div>
         </div>
       </div>
     </li>
